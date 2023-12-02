@@ -1,0 +1,5 @@
+python-dotenv==0.20.0
+solana>=0.30.2
+anchorpy>=0.18.0
+solders>=0.18.0
+tqdm>=4.62.3
