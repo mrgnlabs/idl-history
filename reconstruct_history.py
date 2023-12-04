@@ -12,7 +12,6 @@ from solana.rpc.api import Client
 from solana.rpc.types import DataSliceOpts
 from solana.rpc.commitment import Finalized
 from solders.pubkey import Pubkey
-from anchorpy.idl import IdlProgramAccount, IDL_ACCOUNT_LAYOUT
 from solders.rpc.responses import GetTransactionResp
 from solders.signature import Signature
 from solders.transaction import VersionedTransaction
@@ -35,10 +34,6 @@ def pako_inflate(data):
 def resolve_idl_canonical_buffer(program_id: Pubkey) -> Pubkey:
     base = Pubkey.find_program_address([], program_id)[0]
     return Pubkey.create_with_seed(base, "anchor:idl", program_id)
-
-
-def decode_idl_account(data: bytes) -> IdlProgramAccount:
-    return IDL_ACCOUNT_LAYOUT.parse(data)
 
 
 def get_transactions(
