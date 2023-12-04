@@ -66,7 +66,7 @@ class IdlCreateIdlAction:
     slot: int
 
     def __repr__(self):
-        return f"IdlCreateBufferAction(slot={self.slot}, signature={self.signature})"
+        return f"IdlCreateIdlAction(slot={self.slot}, signature={self.signature})"
 
 
 @dataclass
